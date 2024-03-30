@@ -3,17 +3,19 @@ const summary = (props) => {
   let totalWeeksRate = props.weeks * 390;
   let collisionRate = 0;
   let liabilityRate = 0;
-  let rentalRate = "";
+  let rentalRate = 0;
 
-  if (props.collisionState) {
+  if (props.collisionState === true) {
    collisionRate = 9;
-  } if (props.liabilityState) {
+  } if (props.liabilityState === true) {
     liabilityRate = 15;
-  } if (props.rentalState) {
-   rentalRate = '11.5%';
+  } if (props.rentalState === true) {
+   rentalRate = 11.5;
   } 
 
-  let total = totalDaysRate+totalWeeksRate;
+  let withRentalRate = (totalDaysRate+totalWeeksRate+collisionRate+liabilityRate)*(rentalRate/100);
+
+  let total = totalDaysRate+totalWeeksRate+collisionRate+liabilityRate+withRentalRate;
 
           
 
@@ -69,7 +71,7 @@ const summary = (props) => {
               <td className="px-2 py-4">Rental Tax</td>
               <td></td>
               <td></td>
-              <td className="px-2 py-4">{rentalRate}</td>
+              <td className="px-2 py-4">{rentalRate}%</td>
             </tr>
           </tbody>
           <thead className="">
