@@ -7,6 +7,7 @@ import VehicleInfo from "../forms/vehicleInfo";
 import ChargesSummary from "../tabular/summary";
 
 function Reservation() {
+  
   // Additional charges states
   const [products, setProducts] = useState();
   const [collision, setCollision] = useState(true);
@@ -112,6 +113,7 @@ function Reservation() {
       })
       .catch((er) => er.message);
   };
+
   useEffect(() => {
     callAxios();
     getDateRange();
