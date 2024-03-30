@@ -28,7 +28,7 @@ const additionalCharges = (props) => {
               onChange={props.onChange}
             />
             <label className="inline-block text-base font-light text-gray-900 px-2">
-            Liability Insurance <span className="text-red-600"></span>
+              Liability Insurance <span className="text-red-600"></span>
             </label>
             <p className="text-gray-900 text-sm ml-auto">$15.00</p>
           </div>
@@ -41,7 +41,7 @@ const additionalCharges = (props) => {
               onChange={props.onChange}
             />
             <label className="inline-block text-base font-light text-gray-900 px-2">
-            Rental Tax <span className="text-red-600"></span>
+              Rental Tax <span className="text-red-600"></span>
             </label>
             <p className="text-gray-900 text-sm ml-auto">11.5%</p>
           </div>
