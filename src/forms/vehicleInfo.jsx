@@ -15,12 +15,18 @@ const VehicleInfo = (props) => {
               className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
             >
               <option selected="">Select vehicle type</option>
-              
-              {props.data? props.data.map((product) => {
-                return (
-                    <option value={`${product.type}`} key={product.id}>{product.type}</option>
-                );
-              }): <option value="no-data">No data!</option>} 
+
+              {props.data ? (
+                props.data.map((product) => {
+                  return (
+                    <option value={`${product.type}`} key={product.id}>
+                      {product.type}
+                    </option>
+                  );
+                })
+              ) : (
+                <option value="no-data">No data!</option>
+              )}
             </select>
           </div>
           <div className="">
@@ -32,16 +38,22 @@ const VehicleInfo = (props) => {
               className="border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-primary-500 focus:border-primary-500 block w-full p-2"
             >
               <option selected="">Select vehicle</option>
-              {props.data? props.data.map((product) => {
-                return (
-                    <option value={`${product.make}`} key={product.id}>{product.make}</option>
-                );
-              }): <option value="no-data">No data!</option>} 
+              {props.data ? (
+                props.data.map((product) => {
+                  return (
+                    <option value={`${product.make}`} key={product.id}>
+                      {product.make}
+                    </option>
+                  );
+                })
+              ) : (
+                <option value="no-data">No data!</option>
+              )}
             </select>
           </div>
         </div>
       </form>
     </div>
   );
-}
+};
 export default VehicleInfo;
